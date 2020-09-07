@@ -1,3 +1,3 @@
-module cmd_go
+module smilextay/az_command_go
 
 go 1.14
