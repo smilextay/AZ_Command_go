@@ -1,3 +1,5 @@
-module smilextay/az_command_go
+module github.com/smilextay/az_command_go
 
 go 1.15
+
+require github.com/spf13/cobra v1.0.0
