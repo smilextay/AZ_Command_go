@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/smilextay/az_command_go/src/cmd"
+)
 
 func main() {
-	fmt.Println("hello commadn line")
+
+	err := cmd.Execute()
+	if err != nil {
+		log.Fatalf("cmd Execute err:%v", err)
+	}
 }
