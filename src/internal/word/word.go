@@ -18,13 +18,17 @@ func ToLower(s string) string {
 
 //UnderScoreToUpperCameCase ..
 func UnderScoreToUpperCameCase(s string) string {
-	s = removeUnderScore(s)
-	return strings.ToUpper(s)
+	s1 := removeUnderScore(s)
+	for i, _ := range s1 {
+		s1[i] = strings.Title(s1[i])
+	}
+	s = strings.Join(s1, "")
+	return strings.Replace(s, " ", "", -1)
 }
 
 //UnderScoreToLowerCameCase ..
 func UnderScoreToLowerCameCase(s string) string {
-	s = removeUnderScore(s)
+	s = UnderScoreToUpperCameCase(s)
 	return strings.ToLower(s)
 }
 
@@ -45,7 +49,6 @@ func CamelCaseToUnderScore(s string) string {
 	return string(output)
 }
 
-func removeUnderScore(s string) string {
-	s = strings.Replace(s, "_", "", -1)
-	return strings.Title(s)
+func removeUnderScore(s string) []string {
+	return strings.Split(s, "_")
 }

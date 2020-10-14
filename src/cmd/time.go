@@ -26,8 +26,8 @@ var timeNowCmd = &cobra.Command{
 	Long:  "获取当前时间",
 	Run: func(cmd *cobra.Command, args []string) {
 		now := timer.GetNowTime()
-		log.Println(now.Format("2006-01-02 15:04:05"))
-		log.Println(now.Unix())
+		log.Println("now:	",now.Format("2006-01-02 15:04:05"))
+		log.Println("timestamp:	" ,now.Unix())
 	},
 }
 
